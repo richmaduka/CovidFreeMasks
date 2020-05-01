@@ -1,0 +1,48 @@
+/var/www/html/server.js:14
+    if (err) throw err;
+             ^
+
+Error: connect ECONNREFUSED 127.0.0.1:8889
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1142:16)
+    --------------------
+    at Protocol._enqueue (/var/www/html/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/var/www/html/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at Connection.connect (/var/www/html/node_modules/mysql/lib/Connection.js:116:18)
+    at Object.<anonymous> (/var/www/html/server.js:13:7)
+    at Module._compile (internal/modules/cjs/loader.js:1176:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)
+    at Module.load (internal/modules/cjs/loader.js:1040:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:929:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 8889,
+  fatal: true
+}
+/var/www/html/server.js:14
+    if (err) throw err;
+             ^
+
+Error: connect ECONNREFUSED 127.0.0.1:8889
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1142:16)
+    --------------------
+    at Protocol._enqueue (/var/www/html/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/var/www/html/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at Connection.connect (/var/www/html/node_modules/mysql/lib/Connection.js:116:18)
+    at Object.<anonymous> (/var/www/html/server.js:13:7)
+    at Module._compile (internal/modules/cjs/loader.js:1176:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)
+    at Module.load (internal/modules/cjs/loader.js:1040:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:929:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47 {
+  errno: -111,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 8889,
+  fatal: true
+}
