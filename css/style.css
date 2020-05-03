@@ -9045,7 +9045,7 @@ mark,
 }
 
 .img-fluid {
-  max-width: 100%;
+  max-width: 120%;
   height: auto;
 }
 
@@ -10828,8 +10828,8 @@ fieldset:disabled a.btn {
 
 .btn-secondary {
   color: #fff;
-  background-color: #1998ff;
-  border-color: #1998ff;
+  background-color: #3C37F1;
+  border-color: #3C37F1;
 }
 
 .btn-secondary:hover {
@@ -18361,7 +18361,7 @@ h6, .h6 {
 
 .footer {
   color: #e5e5e5;
-  background: #3c37f1 url(../images/footer_bg.svg);
+  background: #1998ff url(../images/footer_bg.svg);
   background-size: cover;
   background-position: left bottom;
 }
@@ -18429,7 +18429,7 @@ h6, .h6 {
 .navbar {
   width: 100%;
   padding: 1.875rem 1rem;
-  background: #3c37f1;
+  background: #1998ff;
 }
 
 @media (max-width: 991px) {
