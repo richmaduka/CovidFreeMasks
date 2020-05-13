@@ -1,12 +1,10 @@
 /*------------------------------------------------------------------
  [Master Stylesheet]
-
-  Project:	Marshmello Admin
   Version:	1.0.0
 -------------------------------------------------------------------*/
 /*-------------------------------------------------------------------
   ===== Table of Contents =====
-
+  * Custom Css
   * Bootstrap functions
   * Template variables
   * SCSS Compass Functions
@@ -30,6 +28,45 @@
 /* === Import template variables === */
 /*-------------------------------------------------------------------*/
 /* === SCSS Compass Functions === */
+
+.statusbar {
+  
+  padding:5px;
+  color: rgb(75, 7, 52);
+   height: 400px;
+   width: 100%;
+   overflow-y: auto;
+   right: 0;
+   border-radius: 8px;
+  background-color: white;
+  font-style:italic;
+  font-size: 1px;
+  box-shadow: 2px 2px rgb(75, 7, 52);
+}
+.livedonate{
+  padding: 5px;
+  border-radius: 25em;
+  box-shadow: 2px 2px #ffffff;
+  background-color:   rgb(75, 7, 52);
+  color: white;
+  text-align: center;
+  font-weight: 800;
+  border: 1px solid;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Dropup Button */
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
 @-moz-keyframes flash {
   0% {
     opacity: 1;
@@ -9045,8 +9082,9 @@ mark,
 }
 
 .img-fluid {
-  max-width: 120%;
-  height: auto;
+  width:auto;
+  max-height: 120em;
+  
 
 }
 
@@ -18636,7 +18674,7 @@ html {
 }
 
 .main-banner {
-  padding: 4.2rem 0 14rem 0;
+  padding: 4.2rem 0 7rem 0;
   color: #ffffff;
   background-size: cover;
 }
@@ -18644,7 +18682,7 @@ html {
 @media (max-width: 991px) {
   .main-banner {
     padding: 1rem;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
 }
 

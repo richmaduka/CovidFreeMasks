@@ -75,15 +75,47 @@
 										<a href="https://covidfreemasks.typeform.com/to/Sbck8Z" target="_blank" class="btn btn-success mt-3">I have masks to give</a>
 										<a href="https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/diy-cloth-face-coverings.html" target="_blank" class="btn btn-secondary mt-3">Learn how to make masks</a>
 									</div>
-									<div class="mt-5 mt-lg-0">
-										<img src="images/cdcmask.png" alt="marsmello" class="img-fluid" data-aos="zoom-in-up">
-									</div>
+								<br>
+									<div ><div class="livedonate" data-aos="fade-up" > <i class="font-weight-bold mb-3 mdi mdi-bell-ring thankyou waves-effect waves-teal scale-transition"> </i>Status Board</div> <div class="statusbar mt-6 mt-lg-0"  data-aos="fade-up"  id = "myData">	</div></div>
+										
+										 <script>
+											let url = "http://www.freecovid19masks.com:3000/latest"
+												fetch(url)
+													.then(function (response) {
+														return response.json();
+													})
+													.then(function (data) {
+														appendData(data);
+													})
+													.catch(function (err) {
+														console.log('error: ' + err);
+													});
+												function appendData(data) {
+													var mainContainer = document.getElementById("myData");
+													for (var i = 0; i < data.length; i++) {
+														var div = document.createElement("p");
+														div.innerHTML = '<span style="font-weight:bold;" > '+ data[i].NAME + ' </span> in ' + data[i].STATE + ' donated ' + data[i].QTY + ' masks. ';
+														mainContainer.appendChild(div);
+														var hr = document.createElement("hr");
+														mainContainer.appendChild(hr);
+													}
+												}
+											</script>
+									
+					
 								</div>
+						
 							</div>
+									
 						</div>
 					</div>
+						
 				</div>
+						<!--<div class="col-sm-3 dropup livedonate" data-aos="fade-right">
+  							<button class="btn dropbtn"> <i class="font-weight-bold mb-3 mdi mdi-bell-ring thankyou waves-effect waves-teal scale-transition"> John Doe donated 200 masks</i></button>
+						</div> -->
 			</section>
+
 			<section class="our-services" id="services">
 				<div class="container">
 					<div class="row">
@@ -366,7 +398,8 @@ Holy trinity food bank <br>
 								<h6 class="font-weight-medium title-text">KC Nnamani</h6>
 							
 								<p>
-								
+								Kenechi is a management consultant and marketing executive with many years of experience delivering measurable business results through the implementation of solutions and strategic initiatives across organizations. He serves on the board of several non-profit organizations where he provides  solutions to meet the simplest human needs around the world.
+
 								</p>
 							
 							</div>
