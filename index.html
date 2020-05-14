@@ -12,8 +12,12 @@
 		<link rel="stylesheet" href="vendors/jquery-flipster/css/jquery.flipster.css">
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="images/favicon.png" />
+		  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	</head>
+				
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
 		<div id="mobile-menu-overlay"></div>
 		<nav class="navbar navbar-expand-lg fixed-top">
 			<div class="container">
@@ -93,8 +97,11 @@
   							<button class="btn dropbtn"> <i class="font-weight-bold mb-3 mdi mdi-bell-ring thankyou waves-effect waves-teal scale-transition"> John Doe donated 200 masks</i></button>
 						</div> -->
 			</section>
-<!-- <div class="statusbar col-lg-4 col-sm-12"  data-aos="fade-up"  id = "myData">	</div> -->
-			<section class="our-services" id="services">
+ 		<!-- STATUS BAR -->
+		 	<div class="statusbar col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-6 fixed-status position-sticky"  data-aos="fade-right"  id = "myData"> </div> 
+     	<!-- STATUS BAR END-->	
+		  
+			<section  class="our-services" id="services">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
@@ -520,30 +527,84 @@ Holy trinity food bank <br>
 		<script src="vendors/aos/js/aos.js"></script>
 		<script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
 		<script src="js/template.js"></script>
-									<!--
-										 <script>
-											let url = "https://www.freecovid19masks.com:5000/latest"
-												fetch(url)
-													.then(function (response) {
-														return response.json();
-													})
-													.then(function (data) {
-														appendData(data);
-													})
-													.catch(function (err) {
-														console.log('error: ' + err);
-													});
-												function appendData(data) {
-													var mainContainer = document.getElementById("myData");
-													for (var i = 0; i < data.length; i++) {
-														var div = document.createElement("p");
-														div.innerHTML = '<span style="font-weight:bold;" > '+ data[i].NAME + ' </span> in ' + data[i].STATE + ' donated ' + data[i].QTY + ' masks. ';
-														sleep(2000)
-														mainContainer.remove()
-														mainContainer = document.getElementById("myData");
-														mainContainer.appendChild(div);
-													}
-												}
-											</script> -->
+									
+	<script>
+	let url = "https://www.freecovid19masks.com:5000/latest"
+	var mainData;
+	var cont = true;
+		fetch(url)
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+			    interloop(data);
+				
+			})
+			.catch(function (err) {
+				console.log('error: ' + err);
+			});
+		function appendData(data) {
+			var mainContainer = document.getElementById("myData");
+			for (var i = 0; i < 1; i++) {
+				var div = document.createElement("p");
+				div.innerHTML = '<span style="font-weight:bold;" > '+ data[0].NAME + ' </span> in ' + data[i].STATE + ' donated <span style="font-weight:bold;" > ' + data[i].QTY + ' masks</span>. <button onclick = "closeStatus()" class="close btn btn-default">x</button> <br> <sub>5 hours ago</sub> ';
+
+				mainContainer = document.getElementById("myData");
+
+				mainContainer.appendChild(div);
+				//mainContainer.appendChild(div);
+				
+				//if(i == data.length - 1){ i = 0}
+			}
+			
+		}
+		var index = 1;
+        const sleep = (milliseconds) => {
+  			return new Promise(resolve => setTimeout(resolve, milliseconds))
+		}
+
+		function interloop(data) {
+        	//updateStatus(data);
+			if(cont = true){
+			updateStatus(data);
+			sleep(40000).then(() => {
+				
+  				interloop(data);
+			})
+			}
+			
+			
+		}
+
+		function updateStatus(data){
+			var mainContainer = document.getElementById("myData");
+			$("#currentStat").remove();
+
+			var div = document.createElement("p");
+			$("#myData").hide( 500);
+			div.innerHTML = '<div id = "currentStat" ><span style="font-weight:bold;" > '+ data[index].NAME + ' </span> in ' + data[index].STATE + ' donated <span style="font-weight:bold;" > ' + data[index].QTY + ' masks</span>. <button onclick = "closeStatus()" class="close btn btn-default">x</button> <br> <sub>5 hours ago</sub> </div>';
+			mainContainer.appendChild(div);
+			sleep(900).then(() => {
+				$("#myData").show(1000);
+			})
+		
+			
+			if(index == data.length - 1)
+			{
+				index = 0;
+			}else{
+				index++;
+				console.log("index: "+ index);
+			}
+			
+		}
+		/* Get all elements with class="close" */
+        function closeStatus(){
+			cont = false;
+			$("#myData").remove();
+
+		}
+
+	</script> 
 	</body>
 </html>
