@@ -14,6 +14,8 @@
 		<link rel="shortcut icon" href="images/favicon.png" />
 		  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="jquery.min.js" type="text/javascript"></script>
+		<script src="jquery.timeago.js" type="text/javascript"></script>
 	</head>
 				
 	<body data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -315,13 +317,13 @@ A surgical mask is a loose-fitting, disposable device that creates a physical ba
 							<h4 class="thankyou font-weight-medium" >Thank you for your donations. We have distributed almost 1000 free masks to: </h4>
 <h6 class="font-weight-medium thankyou">
 BAYLOR Dallas <br>
-Baylor respiratory therapist<br>
+Baylor Respiratory Therapy<br>
 Methodist Richardson <br>
 Dallas neighborhood <br>
 Mississippi neighborhood <br>
-Holy cross urgent care Arkansas <br>
-sure point ER Texas <br>
-UCH Tennessee dermatology , ENT clincs <br>
+Holy cross urgent care ,Arkansas <br>
+sure point ER, Texas <br>
+Valcee Medical Center, Tennessee <br>
 New Horizon healthcare <br>
 Denton county public health officers<br>
 Memorial Hemann katy hospital, Houston<br>
@@ -582,7 +584,8 @@ Holy trinity food bank <br>
 
 			var div = document.createElement("p");
 			$("#myData").hide( 500);
-			div.innerHTML = '<div id = "currentStat" ><span style="font-weight:bold;" > '+ data[index].NAME + ' </span> in ' + data[index].STATE + ' donated <span style="font-weight:bold;" > ' + data[index].QTY + ' masks</span>. <button onclick = "closeStatus()" class="close btn btn-default">x</button> <br> <sub>5 hours ago</sub> </div>';
+			statTime = timeago.format(data[index].TIMESTAMP, 'zh_CN')
+			div.innerHTML = '<div id = "currentStat" ><span style="font-weight:bold;" > '+ data[index].NAME + ' </span> in ' + data[index].STATE + ' donated <span style="font-weight:bold;" > ' + data[index].QTY + ' masks</span>. <button onclick = "closeStatus()" class="close btn btn-default">x</button> <br> <sub class="timeago" datetime="'+statTime+'"></sub> </div>';
 			mainContainer.appendChild(div);
 			sleep(900).then(() => {
 				$("#myData").show(1000);
@@ -604,7 +607,9 @@ Holy trinity food bank <br>
 			$("#myData").remove();
 
 		}
-
+		jQuery(document).ready(function() {
+  			jQuery("time.timeago").timeago();
+		});
 	</script> 
 	</body>
 </html>
