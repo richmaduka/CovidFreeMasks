@@ -33,7 +33,6 @@
   
   padding:5px;
   color: rgb(75, 7, 52);
-   height: 400px;
    width: 100%;
    overflow-y: auto;
    right: 0;
@@ -9082,6 +9081,8 @@ mark,
 }
 
 .img-fluid {
+  max-width: 120%;
+  height: auto;
   width:auto;
   max-height: 120em;
   
@@ -18674,7 +18675,7 @@ html {
 }
 
 .main-banner {
-  padding: 4.2rem 0 7rem 0;
+  padding: 4.2rem 0 14rem 0;
   color: #ffffff;
   background-size: cover;
 }
@@ -18682,7 +18683,7 @@ html {
 @media (max-width: 991px) {
   .main-banner {
     padding: 1rem;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
   }
 }
 

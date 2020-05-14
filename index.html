@@ -75,32 +75,11 @@
 										<a href="https://covidfreemasks.typeform.com/to/Sbck8Z" target="_blank" class="btn btn-success mt-3">I have masks to give</a>
 										<a href="https://www.nhrmc.org/-/media/covid-19/adult-instructions-face-mask-creation.pdf?la=en" target="_blank" class="btn btn-secondary mt-3">Learn how to make masks</a>
 									</div>
-								<br>
-									<div ><div class="livedonate" data-aos="fade-up" > <i class="font-weight-bold mb-3 mdi mdi-bell-ring thankyou waves-effect waves-teal scale-transition"> </i>Status Board</div> <div class="statusbar mt-6 mt-lg-0"  data-aos="fade-up"  id = "myData">	</div></div>
+							
+								<!--	<div ><div class="livedonate" data-aos="fade-up" > <i class="font-weight-bold mb-3 mdi mdi-bell-ring thankyou waves-effect waves-teal scale-transition"> </i>Status Board</div> <div class="statusbar mt-6 mt-lg-0"  data-aos="fade-up"  id = "myData">	</div></div>
+										-->
 										
-										 <script>
-											let url = "https://www.freecovid19masks.com:5000/latest"
-												fetch(url)
-													.then(function (response) {
-														return response.json();
-													})
-													.then(function (data) {
-														appendData(data);
-													})
-													.catch(function (err) {
-														console.log('error: ' + err);
-													});
-												function appendData(data) {
-													var mainContainer = document.getElementById("myData");
-													for (var i = 0; i < data.length; i++) {
-														var div = document.createElement("p");
-														div.innerHTML = '<span style="font-weight:bold;" > '+ data[i].NAME + ' </span> in ' + data[i].STATE + ' donated ' + data[i].QTY + ' masks. ';
-														mainContainer.appendChild(div);
-														var hr = document.createElement("hr");
-														mainContainer.appendChild(hr);
-													}
-												}
-											</script>
+													<img src="images/cdcmask.png" alt="idea" class="img-fluid">
 									
 					
 								</div>
@@ -115,11 +94,12 @@
   							<button class="btn dropbtn"> <i class="font-weight-bold mb-3 mdi mdi-bell-ring thankyou waves-effect waves-teal scale-transition"> John Doe donated 200 masks</i></button>
 						</div> -->
 			</section>
-
+<!-- <div class="statusbar col-lg-4 col-sm-12"  data-aos="fade-up"  id = "myData">	</div> -->
 			<section class="our-services" id="services">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
+						   
 							<h5 class="text-dark">Acceptable</h5>
 							<h3 class="font-weight-medium text-dark mb-5">Mask Types</h3>
 						</div>
@@ -541,5 +521,30 @@ Holy trinity food bank <br>
 		<script src="vendors/aos/js/aos.js"></script>
 		<script src="vendors/jquery-flipster/js/jquery.flipster.min.js"></script>
 		<script src="js/template.js"></script>
+									<!--
+										 <script>
+											let url = "https://www.freecovid19masks.com:5000/latest"
+												fetch(url)
+													.then(function (response) {
+														return response.json();
+													})
+													.then(function (data) {
+														appendData(data);
+													})
+													.catch(function (err) {
+														console.log('error: ' + err);
+													});
+												function appendData(data) {
+													var mainContainer = document.getElementById("myData");
+													for (var i = 0; i < data.length; i++) {
+														var div = document.createElement("p");
+														div.innerHTML = '<span style="font-weight:bold;" > '+ data[i].NAME + ' </span> in ' + data[i].STATE + ' donated ' + data[i].QTY + ' masks. ';
+														sleep(2000)
+														mainContainer.remove()
+														mainContainer = document.getElementById("myData");
+														mainContainer.appendChild(div);
+													}
+												}
+											</script> -->
 	</body>
 </html>
