@@ -436,7 +436,7 @@ Holy trinity food bank <br>
 										</div>
 									</div>
 									<div class="col-sm-12">
-										<a href="#" class="btn btn-secondary">SEND</a>
+										<button onclick="sendMail()" class="btn btn-secondary">SEND</button>
 									</div>
 								</div>
 							</form>
@@ -590,16 +590,28 @@ Holy trinity food bank <br>
 			sleep(900).then(() => {
 				$("#myData").show(1000);
 			})
-		
-			
-			if(index == data.length - 1)
-			{
+			if(index == data.length - 1){
 				index = 0;
 			}else{
 				index++;
 				console.log("index: "+ index);
 			}
 			
+		}
+		/* Send Mail */
+		function sendMail() {
+			name = document.getElementById("name").innerHTML;
+			email = document.getElementById("mail").innerHTML;
+			body = document.getElementById("message").innerHTML
+			subject = "Message from "+name+" -Website Email Form";
+        	mailURL = 'https://www.freecovid19masks.com?subject='+subject+'&body='+body+'&email='+email+'&name='+name+';
+			fetch(mailURL)
+			.then(function (response) {
+				return response.json();
+			})
+			.catch(function (err) {
+				console.log('error: ' + err);
+			});
 		}
 		/* Get all elements with class="close" */
         function closeStatus(){
