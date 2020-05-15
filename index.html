@@ -600,18 +600,19 @@ Holy trinity food bank <br>
 		}
 		/* Send Mail */
 		function sendMail() {
-			name = document.getElementById("name").innerHTML;
-			email = document.getElementById("mail").innerHTML;
-			message = document.getElementById("message").innerHTML
+			name = document.getElementById("name").value;
+			email = document.getElementById("mail").value;
+			message = document.getElementById("message").value;
 			subject = "Message from "+name+" -Website Email Form";
-        	//mailURL = 'https://www.freecovid19masks.com:5000/sendEmail?subject='+subject+'&body='+body+'&email='+email+'&name='+name+';
-			/**fetch(mailURL)
+        	mailURL = 'https://www.freecovid19masks.com:5000/sendEmail?name='+name+'&body='+body+'&subject='+subject+'&message='+message+'';
+			fetch(mailURL)
 			.then(function (response) {
 				return response.json();
 			})
 			.catch(function (err) {
 				console.log('error: ' + err);
-			}); **/
+			}); 
+			/**
 			(async () => {
 			const rawResponse = await fetch('https://www.freecovid19masks.com:5000/sendEmail?name='+name+'&body='+body+'&subject='+subject+'&message='+message+'', {
 				method: 'GET',
@@ -624,7 +625,7 @@ Holy trinity food bank <br>
 			const content = await rawResponse.json();
 
 			console.log(content);
-			})();
+			})(); **/
 		}
 		/* Get all elements with class="close" */
         function closeStatus(){
