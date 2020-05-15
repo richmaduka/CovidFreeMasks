@@ -417,8 +417,9 @@ Holy trinity food bank <br>
 						</div>
 						<div class="col-sm-7" data-aos="fade-up" data-aos-offset="-500">
 							<h3 class="font-weight-medium text-dark mt-5 mt-lg-0">Got A Question</h3>
-							<h5 class="text-dark mb-5">You can visit our frequently asked Questions (FAQ) Section or contact us using the form below</h5>
-							<form>
+							<h5 class="text-dark mb-5">You can visit our frequently asked Questions (FAQ) Section or contact us at the email below</h5>
+							<a href="mailto:info@freecovid19masks.com"> Info@freecovid19masks.com </a>
+					<!--		<form>
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
@@ -439,7 +440,7 @@ Holy trinity food bank <br>
 										<button onclick="sendMail()" class="btn btn-secondary">SEND</button>
 									</div>
 								</div>
-							</form>
+							</form> -->
 						</div>
 					</div>
 				</div>
@@ -594,11 +595,12 @@ Holy trinity food bank <br>
 				index = 0;
 			}else{
 				index++;
-				console.log("index: "+ index);
+				
 			}
 			
 		}
 		/* Send Mail */
+		/**
 		function sendMail() {
 			name = document.getElementById("name").value;
 			email = document.getElementById("mail").value;
