@@ -613,13 +613,13 @@ Holy trinity food bank <br>
 				console.log('error: ' + err);
 			}); **/
 			(async () => {
-			const rawResponse = await fetch('https://www.freecovid19masks.com:5000/sendEmail', {
-				method: 'POST',
+			const rawResponse = await fetch('https://www.freecovid19masks.com:5000/sendEmail?name='+name+'&body='+body+'&subject='+subject+'&message='+message+'', {
+				method: 'GET',
 				headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({name: name, email: email, message: message, subject: subject})
+				}//,
+			//	body: JSON.stringify({name: name, email: email, message: message, subject: subject})
 			});
 			const content = await rawResponse.json();
 
