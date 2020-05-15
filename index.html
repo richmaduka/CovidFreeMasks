@@ -602,7 +602,7 @@ Holy trinity food bank <br>
 		function sendMail() {
 			name = document.getElementById("name").innerHTML;
 			email = document.getElementById("mail").innerHTML;
-			body = document.getElementById("message").innerHTML
+			message = document.getElementById("message").innerHTML
 			subject = "Message from "+name+" -Website Email Form";
         	//mailURL = 'https://www.freecovid19masks.com:5000/sendEmail?subject='+subject+'&body='+body+'&email='+email+'&name='+name+';
 			/**fetch(mailURL)
@@ -619,7 +619,7 @@ Holy trinity food bank <br>
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 				},
-				body: JSON.stringify({name: name, email: email, body: body, subject: subject})
+				body: JSON.stringify({name: name, email: email, message: message, subject: subject})
 			});
 			const content = await rawResponse.json();
 
