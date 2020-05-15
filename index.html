@@ -604,14 +604,27 @@ Holy trinity food bank <br>
 			email = document.getElementById("mail").innerHTML;
 			body = document.getElementById("message").innerHTML
 			subject = "Message from "+name+" -Website Email Form";
-        	mailURL = 'https://www.freecovid19masks.com?subject='+subject+'&body='+body+'&email='+email+'&name='+name+';
-			fetch(mailURL)
+        	//mailURL = 'https://www.freecovid19masks.com:5000/sendEmail?subject='+subject+'&body='+body+'&email='+email+'&name='+name+';
+			/**fetch(mailURL)
 			.then(function (response) {
 				return response.json();
 			})
 			.catch(function (err) {
 				console.log('error: ' + err);
+			}); **/
+			(async () => {
+			const rawResponse = await fetch('https://www.freecovid19masks.com:5000/sendEmail', {
+				method: 'POST',
+				headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({name: name, email: email, body: body, subject: subject})
 			});
+			const content = await rawResponse.json();
+
+			console.log(content);
+			})();
 		}
 		/* Get all elements with class="close" */
         function closeStatus(){
